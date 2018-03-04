@@ -6,8 +6,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
-@WebServlet(name = "Main", urlPatterns = {"/"})
+@WebServlet(name = "Main", urlPatterns = {"/", "/home"})
 public class MainServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -16,6 +17,14 @@ public class MainServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        String login = (String)req.getSession().getAttribute("login");
+        String text = req.getParameter("text");
+        if (text != null && login != null) {
+            ContentDAO.addRecord(text, login);
+            getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+        } else {
+            PrintWriter out = resp.getWriter();
+            out.write("Wrong password");
+        }
     }
 }

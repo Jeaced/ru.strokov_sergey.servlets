@@ -1,5 +1,4 @@
 <%@ page import="controllers.ContentDAO" %>
-<%@ page import="java.io.PrintWriter" %>
 <%@ page import="java.util.ArrayList" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -13,6 +12,10 @@
     if (user != null) {
         %>
 <a href="/logout">Log out</a>
+<form action="/home" method="post">
+    Text:<input type="text" name="text"><br>
+    <input type="submit" value="post">
+</form>
     <%
         ArrayList<String> content = ContentDAO.getRecords(user);
         if (content != null) {
