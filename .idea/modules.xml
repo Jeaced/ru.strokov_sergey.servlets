@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ru.strokov_sergey.servlets.iml" filepath="$PROJECT_DIR$/.idea/modules/ru.strokov_sergey.servlets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ru.strokov_sergey.servlets_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ru.strokov_sergey.servlets_main.iml" group="ru.strokov_sergey.servlets" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ru.strokov_sergey.servlets_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ru.strokov_sergey.servlets_test.iml" group="ru.strokov_sergey.servlets" />
+    </modules>
+  </component>
+</project>
